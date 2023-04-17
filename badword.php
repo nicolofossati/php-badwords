@@ -2,7 +2,7 @@
 $paragraph = $_GET['paragraph'];
 $badword = $_GET['badword'];
 
-$paragraph = str_replace($badword, '***', $paragraph);
+$blurred_paragraph = str_replace($badword, '***', $paragraph);
 ?>
 
 <!DOCTYPE html>
@@ -16,9 +16,20 @@ $paragraph = str_replace($badword, '***', $paragraph);
 </head>
 
 <body>
-    <?php
-    echo $paragraph;
-    ?>
+    <div>
+        <?php
+        echo "Il paragrafo è: \"" . $paragraph . "\" e la sua lunghezza è di: " . strlen($paragraph) . "caratteri";
+        ?>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div>
+        <?php
+        echo "Invece il paragrafo censurato è: \"" . $blurred_paragraph . "\" e la sua lunghezza è di: " . strlen($blurred_paragraph) . "caratteri";
+        ?>
+    </div>
+
 
 </body>
 
